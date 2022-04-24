@@ -1,20 +1,24 @@
 <div class="main-page">
-    <img src="assets/img/logo.png" alt="logo" class="logo-img">
-    <h1>Welcome to my Film Flix!</h1>
-    <div class="btn-box">
-        <button class="btn-signup">Sign Up</button>
-        <button class="btn-login">Login</button>
+    <h1>
+      Welcome to myFlix!
+    </h1>
+    <div class="button-box">
+        <button
+        mat-raised-button
+        (click)="openUserRegistrationDialog()"
+        style="margin-right: 10px;"
+        color="primary"
+      >
+        Sign Up
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+      >
+        Login
+      </button>
     </div>
-   
-</div>
+    
 
 
 
-<!-- <div class="movie-card" *ngFor="let item of data">
-    <img src="ImagePath" alt="top-img">
-    <div class="card-body" >
-        <div class="card-title">Title</div>
-        <div class="card-text">Description</div>
-        <button>Open</button>
-    </div>
-</div> -->

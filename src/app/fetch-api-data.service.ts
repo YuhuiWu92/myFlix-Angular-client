@@ -33,7 +33,6 @@ export class FetchApiDataService {
 );
 } 
  // get all the app movies.
-
  getAllMovies(): Observable<any> {
   const token = localStorage.getItem('token');
   return this.http.get(apiUrl + 'movies', {
@@ -47,7 +46,6 @@ export class FetchApiDataService {
 }    
 
  // This will get a single movie.
-
  getOneMovie(): Observable<any> {
   const token = localStorage.getItem('token');
   return this.http.get(apiUrl + 'movies', {
@@ -60,10 +58,8 @@ export class FetchApiDataService {
   );
 }
 
-
 // This will get the movie director name.
-
-getDIrector(): Observable<any> {
+getDirector(): Observable<any> {
   const token = localStorage.getItem('token');
   return this.http.get(apiUrl + 'directors/:name', {
     headers: new HttpHeaders({
@@ -75,9 +71,7 @@ getDIrector(): Observable<any> {
   );
 }
 
-
 // This will get the movie genre.
-
 getGenre(): Observable<any> {
   const token = localStorage.getItem('token');
   return this.http.get(apiUrl + 'genres/:name', {
@@ -90,9 +84,7 @@ getGenre(): Observable<any> {
   );
 }
 
-
 // This will get to the user profile.
-
 getUserProfile(username: any): Observable<any> {
   const token = localStorage.getItem('token');
   return this.http.get(apiUrl + `users/${username}`, {
@@ -103,7 +95,6 @@ getUserProfile(username: any): Observable<any> {
     map(this.extractResponseData), catchError(this.handleError)
   );
 }
-
 
 // This will send back the favorite movies component.
 
@@ -118,9 +109,7 @@ getFavoriteMovies(username: any): Observable<any> {
   );
 }
 
-
 // This will add a favorite movie to the user movie list.
-
 addFavoriteMovie(movieId: any): Observable<any> {
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username');
@@ -133,9 +122,7 @@ addFavoriteMovie(movieId: any): Observable<any> {
   );
 }
 
-
 // This will edit a user favorite profile.
-
 editUserProfile(userCredentials: object): Observable<any> {
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username');
@@ -148,9 +135,7 @@ editUserProfile(userCredentials: object): Observable<any> {
   );
 }
 
-
 // This will delete a user profile.
-
 public deleteUserProfile(): Observable<any> {
   const token = localStorage.getItem('token');
   const user = localStorage.getItem('username');
@@ -165,7 +150,6 @@ public deleteUserProfile(): Observable<any> {
 }
 
 // This will delete a user's favorite movie.
-
 deleteFavoriteMovie( movieId: any): Observable<any> {
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username');
@@ -183,7 +167,7 @@ deleteFavoriteMovie( movieId: any): Observable<any> {
 private extractResponseData(data: any | Object): any {
   return data || {};
 }
-
+// handleError
 private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
     console.error('Some error occurred:', error.error.message);

@@ -1,14 +1,35 @@
+html,body{
+    position: relative;
+	min-height: 100vh;
+	//background-color: #E1E8EE;
+	display: flex;
+/* 	align-items: center;
+	justify-content: center; */
+	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
 .main-page {
 	margin: 100px;
-    position: relative;
-    min-width: 50%;
+    position: fixed;
+    min-width: 60%;
     max-width: 80%;
     justify-content: center;
     align-items: center;
 	flex-direction: column;
 	display: flex;
+    background-image: url('https://cdn.pixabay.com/photo/2013/04/03/21/25/flower-100263_960_720.jpg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+   
 }
-.btn-login {
+.button-box {
+    margin: 10px;
+    padding: 8px; 
+}
+
+/* button {
     margin: 10px;
     padding: 8px; 
     font-size: large;
@@ -16,9 +37,12 @@
     font-weight: 600;
     border: 2px solid darkcyan;
     border-radius: .3rem;
-    
-}
-.btn-signup{
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+} */
+/* .btn-signup{
     margin: 10px;
     padding: 8px; 
     font-size: large;
@@ -26,9 +50,14 @@
     font-weight: 600;
     border: 2px solid darkcyan;
     border-radius: .3rem;
-}
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+} */
 h1 {
     text-align: center;
+    padding: 20px;
 }
 
 .logo-img {
