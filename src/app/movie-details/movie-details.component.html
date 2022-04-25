@@ -1,8 +1,13 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            Genre: {{data.name}}
+            Name of Movie: {{data.title}}
         </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+            {{data.directorName}},
+            {{data.genreType}}
+        </mat-card-subtitle>
     </mat-card-header>
+
     <mat-dialog-content>{{data.description}}</mat-dialog-content>
 </mat-card>

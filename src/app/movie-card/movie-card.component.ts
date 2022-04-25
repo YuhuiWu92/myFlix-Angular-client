@@ -4,6 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { GenreCardComponent } from '../genre-card/genre-card.component';
 import { DirectorCardComponent } from '../director-card/director-card.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { Router } from '@angular/router';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -39,14 +43,27 @@ export class MovieCardComponent implements OnInit {
       width: '500px'
     })
  }
- openDirectorDialog(name:string,birthday:Date,bio:string):void {
-  this.dialog.open(DirectorCardComponent,{
-    data:{
-      name,
-      birthday,
-      bio
-    },
-    width: '500px'
-  })
-}
+  openDirectorDialog(name:string,birthday:Date,bio:string):void {
+    this.dialog.open(DirectorCardComponent,{
+      data:{
+        name,
+        birthday,
+        bio
+      },
+      width: '500px'
+    })
+  }
+
+  openMovieDetailsDialog(title:string,description:string,genreType:string,
+    directorName:string):void {
+    this.dialog.open(MovieDetailsComponent,{
+      data:{
+        title,
+        description,
+        genreType,
+        directorName    
+      },
+      width:'500px'
+    })
+  }
 }

@@ -1,22 +1,26 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-//import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'
 
 @Component({
-  selector: 'app-genre-card',
-  templateUrl: './genre-card.component.html',
-  styleUrls: ['./genre-card.component.scss']
+  selector: 'app-movie-details',
+  templateUrl: './movie-details.component.html',
+  styleUrls: ['./movie-details.component.scss']
 })
-export class GenreCardComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit {
 
   constructor(public fetchApiData: FetchApiDataService,
     @Inject(MAT_DIALOG_DATA) 
     public data:{
-      name:string;
+      title:string;
+      genreType:string;
+      directorName:string;
       description:string;
+      
+
     }){ }
 
   ngOnInit(): void {
   }
+
 }

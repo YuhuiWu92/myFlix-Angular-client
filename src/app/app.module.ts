@@ -19,11 +19,16 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const appRoutes:Routes=[
   {path:'welcome',component:WelcomePageComponent},
   {path:'movies',component:MovieCardComponent},
   {path:'',redirectTo:'welcome',pathMatch:'prefix'},
+  {path:'user',component:UserProfileComponent},
 ]
 
 @NgModule({
@@ -34,7 +39,10 @@ const appRoutes:Routes=[
     MovieCardComponent,
     WelcomePageComponent,
     GenreCardComponent,
-    DirectorCardComponent
+    DirectorCardComponent,
+    UserProfileComponent,
+    NavbarComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,7 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     MatInputModule,MatButtonModule,MatFormFieldModule,MatCardModule,
     MatDialogModule,MatSnackBarModule,FormsModule,MatIconModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

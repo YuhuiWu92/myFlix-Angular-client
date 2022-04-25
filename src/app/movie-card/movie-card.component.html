@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div style="display: flex;">
     <mat-card 
     *ngFor="let movie of movies; 
@@ -25,24 +26,21 @@
             (click)="
           openDirectorDialog(
             movie.Director.Name,movie.Director.Birthday,
-            movie.Director.Bio
-            
-          )
-        "
-            >
+            movie.Director.Bio    
+          )">
             Director
             </button>
             <button 
             mat-flat-button
             color="primary"
+            (click)="openMovieDetailsDialog(movie.Title,movie.Description,movie.Genre.Name,movie.Director.Name)"
             >
             Synopsis
             </button>
             <button 
             mat-mini-fab 
             aria-label="Example icon button with a heart icon"
-            >
-                <mat-icon>favorite_border</mat-icon>
+            ><mat-icon>favorite_border</mat-icon>
             </button>
             
         </mat-card-actions>
