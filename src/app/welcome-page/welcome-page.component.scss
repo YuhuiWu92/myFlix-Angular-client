@@ -33,9 +33,7 @@ html,body{
 }
 
 button {
-    margin: 10px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: 600;
+    
     &:hover {
         transition: all .3s ease;
         background-color: rgba(0,0,0,0.2);
