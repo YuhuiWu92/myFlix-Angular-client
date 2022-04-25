@@ -1,0 +1,7 @@
+button {
+    position:relative;
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+}

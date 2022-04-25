@@ -1,8 +1,27 @@
+
+.mat-card{
+    padding-top: 50px;
+    border: solid 1px gainsboro;
+    background-image: url('https://cdn.pixabay.com/photo/2013/04/03/21/25/flower-100263_960_720.jpg');
+    background-position: right center;
+}
 img {
     width: 245px;
     height: 350px;
     border-radius: .3rem;
 }
+
 button {
+    position:relative;
     margin: 5px;
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+}
+.mat-icon{
+    position:relative;
+    &:hover {
+        background-color: rgba(238, 8, 8, 0.744);
+    }
 }

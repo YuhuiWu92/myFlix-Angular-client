@@ -1,28 +1,34 @@
 html,body{
     position: relative;
-	min-height: 100vh;
-	background-color: #E1E8EE;
-/* 	display: flex;
+	min-height: 200vh;
+	display: flex;
 	align-items: center;
-	justify-content: center; */
+	justify-content: center;
 	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
 }
 .main-page {
-	margin: 100px;
-    position: fixed;
-    min-width: 60%;
-    max-width: 80%;
+	margin: auto;
     justify-content: center;
+    width: 100%;
+    height: 100%;
     align-items: center;
 	flex-direction: column;
 	display: flex;
-    background-image: url('https://cdn.pixabay.com/photo/2013/04/03/21/25/flower-100263_960_720.jpg');
-  background-repeat: no-repeat;
-  background-position: left bottom;
-   
+    background-image: url('https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg');
+}
+.logo-img {
+    padding: 8px;
+	margin: 16px;
+    background-color: rgb(0, 0, 0,0.2);
+	border-radius: .6rem;
+}
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
 }
 .button-box {
     margin: 10px;
@@ -32,35 +38,14 @@ html,body{
     display: flex;
 }
 
+
 button {
-    
+    position:relative;
+    margin-right: 15px;
     &:hover {
         transition: all .3s ease;
         background-color: rgba(0,0,0,0.2);
     }
 }
 
-h1 {
-    text-align: center;
-    padding: 20px;
-}
 
-.logo-img {
-    padding: 6px;
-	margin: 6px;
-    background-color: rgb(0, 0, 0,0.05);
-	border-radius: .6rem;
-}
-/* .movie-card {
-	position: relative;
-	background-color: #fff;
-	border-radius: .5rem;
-	border: 1px solid rgba(0,0,0,.125);
-	min-width: 100px;
-	max-width: 60%;
-	padding: 16px;
-	margin: 16px;
-	background-clip: border-box;
-	flex-direction: column;
-	display: flex;
-} */
