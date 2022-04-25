@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Name: {{data.name}}
+        </mat-card-title>    
+    </mat-card-header>
+    <mat-dialog-content>Birthday: {{data.birthday | date:'mediumDate'}}
+    </mat-dialog-content>
+    <mat-dialog-content>{{data.bio}}
+    </mat-dialog-content>
+</mat-card>
