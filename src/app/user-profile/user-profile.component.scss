@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    text-indent: 1px;
+    font-weight: 800;
+}
+.outside-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px;   
+}
+.mat-card {
+    text-align: left;
+    background-image: url('https://cdn.pixabay.com/photo/2013/04/03/21/25/flower-100263_960_720.jpg');
+    background-position: right center;
+    padding: 20px;
+}
+.usercard-actions{
+    text-align: center;
+}
+button {
+    position:relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+}

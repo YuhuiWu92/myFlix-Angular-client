@@ -38,9 +38,11 @@
             Synopsis
             </button>
             <button 
-            mat-mini-fab 
+            mat-icon-button
             aria-label="Example icon button with a heart icon"
-            ><mat-icon>favorite_border</mat-icon>
+            (click)="toggleFavorite(movie)"
+            ><mat-icon *ngIf="!isFavourited(movie._id)"> favorite_border </mat-icon>
+            <mat-icon *ngIf="isFavourited(movie._id)"> favorite </mat-icon>
             </button>
             
         </mat-card-actions>

@@ -1,14 +1,21 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example home icon">
+  <button 
+  mat-icon-button 
+  class="example-icon" 
+  aria-label="Example home icon"
+  (click)="openMovieList()"
+  >
     <mat-icon>home</mat-icon>
   </button>
-  <span>MyFlix</span>
+  <span
+  (click)="openMovieList()"
+  >MyFlix</span>
   <span class="example-spacer"></span>
   <span  
   class="navbar-username" 
   (click)="openUserProfile()"
   >
-  Username 
+  {{this.Username}} 
   </span>
   <span  
   class="navbar-logout"

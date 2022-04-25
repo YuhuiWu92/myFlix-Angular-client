@@ -1,0 +1,69 @@
+<div class="outside-box">
+    <mat-card class="edit-box">
+        <mat-card-header>
+            <mat-card-title>Edit your personal information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form>
+              <mat-form-field>
+                <input
+                  matInput
+                  [(ngModel)]="userProfile.Username"
+                  placeholder="Username"
+                  type="text"
+                  name="Username"
+                  required
+                >
+                </mat-form-field>
+                <mat-form-field>
+                <input
+                  matInput
+                  [(ngModel)]="userProfile.Password"
+                  type = "password"
+                  placeholder="Password"
+                  name="Password"
+                  required
+                >
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  [(ngModel)]="userProfile.Email"
+                  type = "email"
+                  placeholder="Email"
+                  name="Email"
+                  required
+                >
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  [(ngModel)]="userProfile.Birthday"
+                  type = "date"
+                  placeholder="Birthday"  
+                  name="Birthday"
+                >
+              </mat-form-field>
+            </form>
+          </mat-card-content>
+          <mat-card-actions>
+              <button
+                mat-raised-button
+                (click)="saveUserInfo()"
+                color="primary"
+                class="button-profile"
+              >
+                Save
+              </button>
+             <!--  <button
+                mat-raised-button
+                (click)="deleteUser()"
+                color="warn"
+                class="button-profile"
+              >
+                delete your Profile
+              </button> -->
+          </mat-card-actions>
+    </mat-card>
+</div>
+

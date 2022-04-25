@@ -1,0 +1,23 @@
+.outside-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px;   
+}
+
+.edit-box {
+    width: 380px;
+    padding: 20px;
+   
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    position:relative;
+    margin-right: 15px;
+    &:hover {
+        transition: all .3s ease;
+        background-color: rgba(0,0,0,0.2);
+    }
+}

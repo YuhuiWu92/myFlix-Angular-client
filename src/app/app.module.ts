@@ -23,6 +23,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 const appRoutes:Routes=[
   {path:'welcome',component:WelcomePageComponent},
@@ -42,7 +43,8 @@ const appRoutes:Routes=[
     DirectorCardComponent,
     UserProfileComponent,
     NavbarComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,14 @@ import { Router } from '@angular/router';
 //Declaring the api url that will provide data for the client app
 const apiUrl ='https://my-film-flix.herokuapp.com/';
 const token = localStorage.getItem('token');
-const username = localStorage.getItem('username');
+const username = localStorage.getItem('user');
+export interface User {
+  _id: string;
+  Favorites: Array<string>;
+  Username: string;
+  Email: string;
+  Birthday: Date;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -110,23 +117,23 @@ getFavoriteMovies(username: any): Observable<any> {
 }
 
 // This will add a favorite movie to the user movie list.
-addFavoriteMovie(movieId: any): Observable<any> {
+addFavoriteMovies(MovieID: any): Observable<any> {
   const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
-  return this.http.post(apiUrl + `users/${username}/movies/${movieId}`, null, {
-    headers: new HttpHeaders({
-      Authorization: 'Bearer ' + token,
+  const username = localStorage.getItem('user');
+  return this.http
+    .post(apiUrl + `users/${username}/movies/${MovieID}`, null, {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + token,
+      }),
     })
-  }).pipe(
-    map(this.extractResponseData), catchError(this.handleError)
-  );
+    .pipe(map(this.extractResponseData), catchError(this.handleError));
 }
 
 // This will edit a user favorite profile.
 editUserProfile(userCredentials: object): Observable<any> {
   const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
-  return this.http.put(apiUrl + `users/${username}`, userCredentials, {
+  const user = localStorage.getItem('user');
+  return this.http.put(apiUrl + `users/${user}`, userCredentials, {
     headers: new HttpHeaders({
       Authorization: 'Bearer ' + token,
     }),
@@ -138,9 +145,9 @@ editUserProfile(userCredentials: object): Observable<any> {
 // This will delete a user profile.
 public deleteUserProfile(): Observable<any> {
   const token = localStorage.getItem('token');
-  const user = localStorage.getItem('username');
+  const user = localStorage.getItem('user');
   return this.http
-    .delete(apiUrl + `users/${username}`, {
+    .delete(apiUrl + `users/${user}`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       }),
@@ -150,17 +157,17 @@ public deleteUserProfile(): Observable<any> {
 }
 
 // This will delete a user's favorite movie.
-deleteFavoriteMovie( movieId: any): Observable<any> {
+
+deleteFavoriteMovies(MovieID: any): Observable<any> {
   const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
-  return this.http.delete(
-    apiUrl + `users/${username}/movies/${movieId}`, {
+  const username = localStorage.getItem('user');
+  return this.http
+    .delete(apiUrl + `users/${username}/movies/${MovieID}`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
-      })
-    }).pipe(
-      map(this.extractResponseData), catchError(this.handleError)
-  );
+      }),
+    })
+    .pipe(map(this.extractResponseData), catchError(this.handleError));
 }
 
   // Extract data response 
