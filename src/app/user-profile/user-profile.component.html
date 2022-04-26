@@ -35,54 +35,69 @@
 </div>
 <h2 class="user-fav">My Favorite Movies</h2>
 
-   <!--  <div 
-    style="display: flex;"
-    class="favorites-container"
-    >
-        <mat-card 
-        *ngFor="let movie of movies; 
-        let i=index;"
-        style="flex:1 1 auto;"
-        >
-            <mat-card-header>
-                <mat-card-title>{{movie.Title}}</mat-card-title>
-                <mat-card-subtitle>
-                    Directed by: {{movie.Director.Name}}
-                </mat-card-subtitle>
-            </mat-card-header>
-            <img src={{movie.ImagePath}}/>
-            <mat-card-actions>
-                <button 
-                mat-flat-button
-                color="primary"
-                (click)="openGenreDialog(movie.Genre.Name,movie.Genre.Description)"
-                >
-                Genre
-                </button>
-                <button 
-                mat-flat-button            
-                color="primary"
-                (click)="
-              openDirectorDialog(
-                movie.Director.Name,movie.Director.Birthday,
-                movie.Director.Bio    
-              )">
-                Director
-                </button>
-                <button 
-                mat-flat-button
-                color="primary"
-                (click)="openMovieDetailsDialog(movie.Title,movie.Description,movie.Genre.Name,movie.Director.Name)"
-                >
-                Synopsis
-                </button>
-                <button 
-                mat-mini-fab 
-                aria-label="Example icon button with a heart icon"
-                ><mat-icon>favorite_border</mat-icon>
-                </button>
-                
-            </mat-card-actions>
-        </mat-card>
-    </div> -->
+<div class="favorites-container"
+style="display: flex;"
+>
+<p *ngIf="favMovies.length==0">You don't have any favourite movies in your list</p>
 
+
+  <!-- <mat-card
+  *ngFor="let favMovie of favMovies; let i = index"
+    class="favorite-card"
+  >
+  <mat-card-content>
+    {{favMovie}}
+  </mat-card-content>  -->
+    <!--  <mat-card-header 
+    >
+      <mat-card-title>
+        {{user.favMovie.Title}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        Directed by: {{ favMovie.director }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img src= "{{favMovie.ImagePath}}" />
+      
+    <mat-card-actions class="fav-action">
+      <button
+      mat-flat-button
+      color="primary"
+        class="fav-action-btn"
+        (click)="openMovieDetailsDialog(favMovie.Title, favMovie.Description,favMovie.Genre.Name,favMovie.Director.Name)"
+      >
+        Movie info
+      </button>
+      <button
+        mat-flat-button
+        color="primary"
+        class="fav-action-btn"
+        (click)="openGenreDialog(favMovie.Genre.Name, favMovie.Genre.Description)
+        "
+      >
+        Genre
+      </button>
+      <button
+      mat-flat-button         
+      color="primary"
+        class="fav-action-btn"
+        (click)="
+          openDirectorDialog(
+            favMovie.Director.Name,
+            favMovie.Director.Bio,
+            favMovie.Director.Birthday
+          )
+        "
+      >
+        Director
+      </button>
+    </mat-card-actions>
+
+    <button
+      mat-icon-button
+      (click)="removeFavoriteMovies(favMovie._id, favMovie.title)"
+    >
+      <mat-icon class="remove-btn">remove_circle</mat-icon>
+    </button>
+  </mat-card> 
+</div> -->

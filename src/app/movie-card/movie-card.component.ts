@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GenreCardComponent } from '../genre-card/genre-card.component';
 import { DirectorCardComponent } from '../director-card/director-card.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NavbarComponent } from '../navbar/navbar.component';
+//import { NavbarComponent } from '../navbar/navbar.component';
 //import { Router } from '@angular/router';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
@@ -103,7 +103,6 @@ export class MovieCardComponent implements OnInit {
   removeFavoriteMovies(movieID: string, title: string): void {
     this.fetchApiData.deleteFavoriteMovies(movieID).subscribe((resp: any) => {
       console.log(resp);
-      console.log(`${title} has been removed from your favorites!`)
       this.snackBar.open(
         `${title} has been removed from your favourites!`,
         'OK',
@@ -120,7 +119,7 @@ export class MovieCardComponent implements OnInit {
    * @param id {string}
    * @returns true or false
    */
-     isFavourited(MovieID: string): boolean{
+     isFavorite(MovieID: string): boolean{
     return this.Favorites.includes(MovieID);
   }
 
@@ -133,8 +132,8 @@ export class MovieCardComponent implements OnInit {
    * @param movie {any}
    */
    toggleFavorite(movie: any): void {
-     console.log(movie)
-    this.isFavourited(movie._id)
+     //console.log(movie)
+    this.isFavorite(movie._id)
       ? this.removeFavoriteMovies(movie._id, movie.Title)
       : this.addFavoriteMovies(movie._id, movie.Title);
   }
