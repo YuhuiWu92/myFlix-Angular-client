@@ -24,12 +24,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { FavMovieListComponent } from './fav-movie-list/fav-movie-list.component';
 
 const appRoutes:Routes=[
   {path:'welcome',component:WelcomePageComponent},
   {path:'movies',component:MovieCardComponent},
   {path:'',redirectTo:'welcome',pathMatch:'prefix'},
   {path:'user',component:UserProfileComponent},
+  {path:'movieslist',component:FavMovieListComponent},
 ]
 
 @NgModule({
@@ -44,7 +46,8 @@ const appRoutes:Routes=[
     UserProfileComponent,
     NavbarComponent,
     MovieDetailsComponent,
-    EditFormComponent
+    EditFormComponent,
+    FavMovieListComponent
   ],
   imports: [
     BrowserModule,

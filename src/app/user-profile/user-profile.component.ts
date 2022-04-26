@@ -4,9 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { EditFormComponent } from '../edit-form/edit-form.component';
-import { MovieDetailsComponent } from '../movie-details/movie-details.component';
-import { GenreCardComponent } from '../genre-card/genre-card.component';
-import { DirectorCardComponent } from '../director-card/director-card.component';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -15,8 +12,7 @@ import { DirectorCardComponent } from '../director-card/director-card.component'
 export class UserProfileComponent implements OnInit {
   user: any = {};
   Username = localStorage.getItem('user');
-  favMovies: any[] = [];
-  movies : any[] = [];
+ 
 
   constructor(
     public dialog: MatDialog,
@@ -27,16 +23,16 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUserProfile();
     
-    this.getFavoriteMovies();
+    //this.getFavouriteMovies();
 
   }
-  getMovies():void {
+  /* getMovies():void {
     this.fetchApiData.getAllMovies().subscribe((response:any)=>{
       this.movies=response;
       console.log(this.movies);
       return this.movies;
     })
-  }
+  } */
   /**
    * call API endpoint to get user info
    * @function getUserProfile
@@ -56,7 +52,7 @@ export class UserProfileComponent implements OnInit {
   /**
    * get users FavoriteMovies from the users data
    */
-   getFavoriteMovies(): void {
+   /* getFavouriteMovies(): void {
     const user = localStorage.getItem('user');
     if (user) {
       this.fetchApiData.getUserProfile(user).subscribe((res: any) => {
@@ -65,18 +61,18 @@ export class UserProfileComponent implements OnInit {
         return this.favMovies;
       });
     }
-  }
+  } */
 /**
    * use API end-point to remove user favorite
    * @function deleteFavoriteMovies
    * @param Id {string}
    * @returns updated users data in json format
    */
- removeFavoriteMovies(movieID: string, title: string): void {
+/*  removeFavoriteMovies(movieID: string, title: string): void {
   this.fetchApiData.deleteFavoriteMovies(movieID).subscribe((resp: any) => {
     console.log(resp);
     this.snackBar.open(
-      `${title} has been removed from your favorites!`,
+      `${title} has been removed from your favouriteMovies!`,
       'OK',
       {
         duration: 2000,
@@ -84,8 +80,7 @@ export class UserProfileComponent implements OnInit {
     );
     this.ngOnInit();
   });
-
-}
+} */
   /**
    * call API endpoint to remove the current user
    * @function deleteUserProfile
@@ -117,20 +112,20 @@ export class UserProfileComponent implements OnInit {
    * @param name {string}
    * @param description {string}
    */
-   openGenreDialog(name:string,description:string):void {
+   /* openGenreDialog(name:string,description:string):void {
     this.dialog.open(GenreCardComponent,{
       data:{name:name,description:description
       },
       width: '500px'
     })
- }
+ } */
   /**
    * open a dialog to display the DirectorViewComponent
    * @param name {string}
    * @param bio {string}
    * @param birthday {Date}
    */
-  openDirectorDialog(name:string,birthday:Date,bio:string):void {
+  /* openDirectorDialog(name:string,birthday:Date,bio:string):void {
     this.dialog.open(DirectorCardComponent,{
       data:{
         name:name,
@@ -139,9 +134,9 @@ export class UserProfileComponent implements OnInit {
       },
       width: '500px'
     })
-  }
+  } */
 
-  openMovieDetailsDialog(title:string,description:string,genreType:string,
+  /* openMovieDetailsDialog(title:string,description:string,genreType:string,
     directorName:string):void {
     this.dialog.open(MovieDetailsComponent,{
       data:{
@@ -152,9 +147,7 @@ export class UserProfileComponent implements OnInit {
       },
       width:'500px'
     })
-  }
-
-
+  } */
 
 
 }

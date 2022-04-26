@@ -39,5 +39,7 @@ export class NavbarComponent implements OnInit {
   openMovieList():void{
     this.router.navigate(['movies']);
   }
-  
+  openFavMovieList():void{
+    this.router.navigate(['movieslist']);
+  }
 }
