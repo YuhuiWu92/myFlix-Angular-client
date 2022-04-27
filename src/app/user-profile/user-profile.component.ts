@@ -96,7 +96,7 @@ export class UserProfileComponent implements OnInit {
         duration: 2000,
       }
     );
-    this.ngOnInit();
+    window.location.reload();
   });
 
 }
