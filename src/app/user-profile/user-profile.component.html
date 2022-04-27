@@ -45,16 +45,13 @@ style="display: flex;"
   *ngFor="let favMovie of favMovies; let i = index"
     class="favorite-card"
   >
-  <mat-card-content>
-    {{favMovie}}
-  </mat-card-content> 
-    <!--  <mat-card-header 
+     <mat-card-header 
     >
       <mat-card-title>
-        {{user.favMovie.Title}}
+        {{favMovie.Title}}
       </mat-card-title>
       <mat-card-subtitle>
-        Directed by: {{ favMovie.director }}
+        Directed by: {{ favMovie.Director.Name }}
       </mat-card-subtitle>
     </mat-card-header>
     <img src= "{{favMovie.ImagePath}}" />
@@ -84,8 +81,8 @@ style="display: flex;"
         (click)="
           openDirectorDialog(
             favMovie.Director.Name,
-            favMovie.Director.Bio,
-            favMovie.Director.Birthday
+            favMovie.Director.Birthday,
+            favMovie.Director.Bio 
           )
         "
       >
@@ -100,5 +97,5 @@ style="display: flex;"
       <mat-icon class="remove-btn">remove_circle</mat-icon>
     </button>
   </mat-card> 
-</div> -->
+</div>
 

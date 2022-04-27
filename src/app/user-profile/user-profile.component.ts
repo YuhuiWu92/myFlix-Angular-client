@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUserProfile();
     
-    this.getFavoriteMovies();
+    // this.getFavoriteMovies();
 
   }
   getMovies():void {
@@ -49,7 +49,16 @@ export class UserProfileComponent implements OnInit {
       this.fetchApiData.getUserProfile(user).subscribe((res: any) => {
         this.user = res;
         console.log(this.user);
-        return this.user;
+        this.fetchApiData.getAllMovies().subscribe((res: any) => {
+          const movies = res;
+          console.log("FavIds", this.user.FavoriteMovies);
+          console.log("Movies", movies);
+          movies.forEach((movie: any) => {
+            if (this.user.FavoriteMovies.includes(movie._id)) {
+              this.favMovies.push(movie);
+            }
+          })
+        });
       });
     }
   }
@@ -59,10 +68,15 @@ export class UserProfileComponent implements OnInit {
    getFavoriteMovies(): void {
     const user = localStorage.getItem('user');
     if (user) {
-      this.fetchApiData.getUserProfile(user).subscribe((res: any) => {
-        this.favMovies = res.FavoriteMovies;
-        console.log(this.favMovies);
-        return this.favMovies;
+      this.fetchApiData.getAllMovies().subscribe((res: any) => {
+        const movies = res;
+        console.log("FavIds", this.user.FavoriteMovies);
+        console.log("Movies", movies);
+        movies.forEach((movie: any) => {
+          if (this.user.FavoriteMovies.includes(movie._id)) {
+            this.favMovies.push(movie);
+          }
+        })
       });
     }
   }
@@ -133,9 +147,9 @@ export class UserProfileComponent implements OnInit {
   openDirectorDialog(name:string,birthday:Date,bio:string):void {
     this.dialog.open(DirectorCardComponent,{
       data:{
-        name:name,
-        birthday:birthday,
-        bio:bio
+        name,
+        birthday,
+        bio
       },
       width: '500px'
     })
