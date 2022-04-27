@@ -2,7 +2,22 @@
     flex: 1 1 auto;
   }
 span {
-    padding-left: 20px;
+    padding-left: 80px;
     font-weight: 400;
+    &:hover {
+      text-decoration: underline;
+  } 
+    &:active {
+      font-weight: 700;
    
+}
+.mat-icon-button  {
+  font-size: 22px;
+  font-weight: 700;
+}
+.tohomepage {
+  padding-left: 100px;
+ 
+  }
+
 }
