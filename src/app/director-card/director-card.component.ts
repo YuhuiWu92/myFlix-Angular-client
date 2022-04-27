@@ -6,6 +6,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog'
   templateUrl: './director-card.component.html',
   styleUrls: ['./director-card.component.scss']
 })
+/**
+ * class DirectorCardComponent is used to
+ */
 export class DirectorCardComponent implements OnInit {
 
   constructor(public fetchApiData: FetchApiDataService,

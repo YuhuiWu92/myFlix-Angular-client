@@ -8,6 +8,9 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './edit-form.component.html',
   styleUrls: ['./edit-form.component.scss']
 })
+/**
+ * 
+ */
 export class EditFormComponent implements OnInit {
   Username = localStorage.getItem('user');
   user: any = {};
@@ -27,6 +30,9 @@ export class EditFormComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
   }
+  /**
+   * 
+   */
   getUser(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUserProfile(user).subscribe((resp: any) => {
@@ -44,6 +50,5 @@ export class EditFormComponent implements OnInit {
       duration: 4000,
     });
   }
- /*  deleteUser(): void {
-  } */
+
 }
