@@ -1,6 +1,6 @@
 # MyFlixAngularClient
 
-This project was generated with Angular[Angular CLI,version 13.3.2], build the client-side for an application called myFlix based on its existing server-side code (REST API and database) und is designed using Angular Material.
+This project was generated with Angular[Angular CLI,version 13.3.2], build the client-side for an application called my Flim Flix based on its existing server-side code (REST API and database) und is designed using Angular Material.
 
 # My Page
 
@@ -21,13 +21,13 @@ https://yuhuiwu92.github.io/myFlix-Angular-client/
 
 ### Technical Requirements
 
-● The application must be written in Angular (version 9 or later)
-● The application requires the latest version of Node.js and npm package
-● The application must contain user registration and login forms
-● The application must be designed using Angular Material
-● The application's codebase must contain comments using Typedoc
-● The project must contain technical documentation using JSDoc
-● The project must be hosted on GitHub Pages
++ The application must be written in Angular (version 9 or later)
++ The application requires the latest version of Node.js and npm package
++ The application must contain user registration and login forms
++ The application must be designed using Angular Material
++ The application's codebase must contain comments using Typedoc
++ The project must contain technical documentation using JSDoc
++ The project must be hosted on GitHub Pages
 
 ## Development server
 
